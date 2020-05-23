@@ -1,0 +1,35 @@
+.c-got-characters {
+
+
+  &__gallery {
+
+  }
+
+  &__item {
+    width: 90%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 350px;
+    margin: 25px auto;
+    cursor: pointer;
+    &__name {
+      background-color: rgba(0, 0, 0, 0.75);
+      visibility: hidden;
+      margin: auto;
+      padding-top: 20px;
+      text-align: center;
+      color: white;
+      width: 90%;
+      height: 40px;
+      position: absolute;
+      bottom: 28px;
+    }
+    &:hover ~ p{
+      visibility: visible;
+    }
+  }
+  
+
+}

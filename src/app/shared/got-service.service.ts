@@ -12,6 +12,10 @@ export class GotServiceService {
     return this.httpClient.get(environment.url + 'characters');
   }
 
+  getCharacter(name) {
+    return this.httpClient.get(environment.utl + 'characters/'+name);
+  }
+
   getHouses() {
     return this.httpClient.get(environment.url + 'houses');
   }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://api.got.show',
+  url: 'https://api.got.show/api/show/',
 };
 
 /*

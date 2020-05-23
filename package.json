@@ -20,7 +20,11 @@
     "@angular/platform-browser-dynamic": "~9.1.7",
     "@angular/router": "~9.1.7",
     "bootstrap": "^4.5.0",
+    "primeflex": "^1.1.0",
+    "primeicons": "^3.0.0-rc.1",
+    "primeng": "^9.0.6",
     "rxjs": "~6.5.4",
+    "simplebar-angular": "^2.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

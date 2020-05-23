@@ -1,5 +1,5 @@
 
-.container-home {
+.c-got-home {
   background-image: url("https://cdn.zeplin.io/5e1c73baff24c3be01ba9cca/assets/210f33c2-76eb-474c-a297-6774dc1dd03c.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -8,16 +8,26 @@
   height: 100vh;
   text-align: center;
 
+  &__languages {
+    position: absolute;
+    right: 200px;
+  }
+
+  &__language {
+    margin: 12px;
+    width: 45px;
+    height: auto;
+  }
+
   &__title {
     font-size: 150px;
     color: white;
     width: 60%;
     margin: auto;
-    padding: 12% 0;
+    padding: 15% 0 9%;
   }
  
   &__option {
     font-size: 25px;
-    color: white;
   }
 }
