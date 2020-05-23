@@ -1,1 +1,65 @@
-<app-characters [character]="charName"></app-characters>
+<div style="display: flex;">
+  <div>
+    <p routerLink="/characters">Volver</p>
+  </div>
+  <div class="c-got-home__languages">
+    <img
+      routerLink="/"
+      class="c-got-home__language homeButton"
+      src="assets/img/home.png"
+      alt=""
+    />
+    <img class="c-got-home__language" src="assets/img/spain.png" alt="" />
+    <img class="c-got-home__language" src="assets/img/uk.png" alt="" />
+  </div>
+</div>
+
+<p-card>
+  <div class="c-got-characters__gallery">
+    <div class="c-got-characters__item">
+      <img
+        class="c-got-characters__img"
+        src="{{ singleChar.image }}"
+        alt="{{ singleChar.name }}"
+      />
+      <p class="c-got-characters__img__name">{{ singleChar.name }}</p>
+    </div>
+  </div>
+</p-card>
+
+<div class="row">
+  <div class="col-2">
+    <p style="color: white;">CASA</p>
+    <img src="" alt="" />
+  </div>
+  <div class="col-2">
+    <p>ALIANZAS</p>
+    <p style="color: white;" *ngFor="let allegiance of singleChar.allegiances">
+      {{ allegiance }}
+    </p>
+  </div>
+  <div class="col-2">
+    <p>APARICIONES</p>
+    <p style="color: white;" *ngFor="let appearance of singleChar.appearances">
+      {{ appearance }}
+    </p>
+  </div>
+  <div class="col-2">
+    <p>PADRES</p>
+    <p style="color: white;">
+      {{ singleChar.father }}
+    </p>
+  </div>
+  <div class="col-2">
+    <p>DESCENDIENTES</p>
+    <p style="color: white;" *ngFor="let sibling of singleChar.siblings">
+      {{ sibling }}
+    </p>
+  </div>
+  <div class="col-2">
+    <p>TITULOS</p>
+    <p style="color: white;" *ngFor="let title of singleChar.titles">
+      {{ title }}
+    </p>
+  </div>
+</div>

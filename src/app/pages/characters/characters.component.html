@@ -3,27 +3,38 @@
     <input type="text" pInputText />
   </div>
   <div class="c-got-home__languages">
-    <img routerLink="/" class="c-got-home__language homeButton" src="assets/img/home.png" alt="">
-    <img class="c-got-home__language" src="assets/img/spain.png" alt="">
-    <img class="c-got-home__language" src="assets/img/uk.png" alt="">
+    <img
+      routerLink="/"
+      class="c-got-home__language homeButton"
+      src="assets/img/home.png"
+      alt=""
+    />
+    <img class="c-got-home__language" src="assets/img/spain.png" alt="" />
+    <img class="c-got-home__language" src="assets/img/uk.png" alt="" />
   </div>
 </div>
 
 <div class="c-got-characters">
-  <p-scrollPanel [style]="{width: '95%', height: '720px', margin:'auto'}">
+  <p-scrollPanel [style]="{ width: '95%', height: '720px', margin: 'auto' }">
     <div class="row">
       <div class="col-2" *ngFor="let character of characters">
         <p-card>
           <div class="c-got-characters__gallery">
             <div class="c-got-characters__item">
-              <img  class="c-got-characters__img" src="{{character.image}}" alt="{{character.name}}">
-              <p class="c-got-characters__img__name">{{character.name}}</p>
+              <a routerLink="/characters/{{ character.name }}">
+                <img
+                  class="c-got-characters__img"
+                  src="{{ character.image }}"
+                  alt="{{ character.name }}"
+                />
+              </a>
+              <p class="c-got-characters__img__name">{{ character.name }}</p>
             </div>
           </div>
         </p-card>
+      </div>
     </div>
-  </div>
-</p-scrollPanel>
+  </p-scrollPanel>
 </div>
 
 <div class="row got-footer">
@@ -33,12 +44,12 @@
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-home__option" >
+    <p class="c-got-home__option">
       <a routerLink="/houses">CASAS</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-home__option" >
+    <p class="c-got-home__option">
       <a routerLink="/">CRONOLOGIA</a>
     </p>
   </div>
