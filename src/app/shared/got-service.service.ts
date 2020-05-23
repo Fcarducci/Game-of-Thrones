@@ -19,4 +19,9 @@ export class GotServiceService {
   getHouses() {
     return this.httpClient.get(environment.url + 'houses');
   }
+
+  getHouse(name) {
+    return this.httpClient.get(environment.url + 'houses/'+name);
+  }
+
 }

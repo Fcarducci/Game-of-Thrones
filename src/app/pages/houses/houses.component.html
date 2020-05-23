@@ -8,10 +8,10 @@
     routerLink="/"
     class="c-got-header__home"
     src="assets/img/home.png"
-    alt=""
+    alt="homeButton"
     />
-    <img class="c-got-header__language" src="assets/img/spain.png" alt="">
-    <img class="c-got-header__language" src="assets/img/uk.png" alt="">
+    <img class="c-got-header__language" src="assets/img/spain.png" alt="spanish">
+    <img class="c-got-header__language" src="assets/img/uk.png" alt="english">
   </div>
 </div>
 
@@ -22,7 +22,7 @@
           <div class="c-got-houses__gallery">
             <div class="c-got-houses__item">
               <img
-                routerLink="/characters/{{ house.name }}"
+                routerLink="/houses/{{ house.name }}"
                 class="c-got-houses__img"
                 src="{{ house.logoURL }}"
                 alt="{{ house.name }}"
@@ -48,7 +48,7 @@
   </div>
   <div class="col-4">
     <p class="c-got-footer__option" >
-      <a routerLink="/">CRONOLOGIA</a>
+      <a routerLink="/chronology">CRONOLOGIA</a>
     </p>
   </div>
 </div>

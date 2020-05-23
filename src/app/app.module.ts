@@ -11,10 +11,12 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {CardModule} from 'primeng/card';
 import { CharDetailComponent } from './pages/char-detail/char-detail.component';
 import {InputTextModule} from 'primeng/inputtext';
+import { HouseDetailComponent } from './pages/house-detail/house-detail.component';
+import { ChronologyComponent } from './pages/chronology/chronology.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CharactersComponent, HousesComponent, CharDetailComponent],
+  declarations: [AppComponent, HomeComponent, CharactersComponent, HousesComponent, CharDetailComponent, HouseDetailComponent, ChronologyComponent],
   
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CardModule, ScrollPanelModule, InputTextModule],
   providers: [],
