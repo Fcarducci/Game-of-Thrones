@@ -1,4 +1,11 @@
+@import "~bootstrap/scss/bootstrap-grid";
+// @import "~primeicons/primeicons.css";
+// @import "~primeng/resources/primeng.min.css";
+
 @font-face {
   font-family: got;
   src: url(assets/fonts/GameOfThrones.ttf);
+}
+* {
+  font-family: got;
 }
