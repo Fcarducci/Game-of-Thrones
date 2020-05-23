@@ -1,55 +1,53 @@
-<div style="display: flex;">
+
+<div class="c-got-header">
   <div>
     <input type="text" pInputText />
   </div>
-  <div class="c-got-home__languages">
+  <div class="c-got-header__nav">
     <img
-      routerLink="/"
-      class="c-got-home__language homeButton"
-      src="assets/img/home.png"
-      alt=""
+    routerLink="/"
+    class="c-got-header__home"
+    src="assets/img/home.png"
+    alt=""
     />
-    <img class="c-got-home__language" src="assets/img/spain.png" alt="" />
-    <img class="c-got-home__language" src="assets/img/uk.png" alt="" />
+    <img class="c-got-header__language" src="assets/img/spain.png" alt="">
+    <img class="c-got-header__language" src="assets/img/uk.png" alt="">
   </div>
 </div>
 
 <div class="c-got-characters">
-  <p-scrollPanel [style]="{ width: '95%', height: '720px', margin: 'auto' }">
+  <p-scrollPanel [style]="{ width: '85%', height: '670px', margin: 'auto' }">
     <div class="row">
       <div class="col-2" *ngFor="let character of characters">
-        <p-card>
           <div class="c-got-characters__gallery">
             <div class="c-got-characters__item">
-              <a routerLink="/characters/{{ character.name }}">
-                <img
-                  class="c-got-characters__img"
-                  src="{{ character.image }}"
-                  alt="{{ character.name }}"
-                />
-              </a>
+              <img
+                routerLink="/characters/{{ character.name }}"
+                class="c-got-characters__img"
+                src="{{ character.image }}"
+                alt="{{ character.name }}"
+              />
               <p class="c-got-characters__img__name">{{ character.name }}</p>
             </div>
           </div>
-        </p-card>
       </div>
     </div>
   </p-scrollPanel>
 </div>
 
-<div class="row got-footer">
+<div class="row c-got-footer">
   <div class="col-4">
-    <p class="c-got-home__option">
-      <a routerLink="/characters">PERSONAJES</a>
+    <p class="c-got-footer__option">
+      <a style="text-decoration: underline;" routerLink="/characters">PERSONAJES</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-home__option">
+    <p class="c-got-footer__option" >
       <a routerLink="/houses">CASAS</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-home__option">
+    <p class="c-got-footer__option" >
       <a routerLink="/">CRONOLOGIA</a>
     </p>
   </div>

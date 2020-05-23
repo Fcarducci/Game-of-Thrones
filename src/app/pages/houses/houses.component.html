@@ -1,1 +1,54 @@
-<p>houses works!</p>
+
+<div class="c-got-header">
+  <div>
+    <input type="text" pInputText />
+  </div>
+  <div class="c-got-header__nav">
+    <img
+    routerLink="/"
+    class="c-got-header__home"
+    src="assets/img/home.png"
+    alt=""
+    />
+    <img class="c-got-header__language" src="assets/img/spain.png" alt="">
+    <img class="c-got-header__language" src="assets/img/uk.png" alt="">
+  </div>
+</div>
+
+<div class="c-got-houses">
+  <p-scrollPanel [style]="{ width: '85%', height: '670px', margin: 'auto' }">
+    <div class="row">
+      <div class="col-2" *ngFor="let house of houses">
+          <div class="c-got-houses__gallery">
+            <div class="c-got-houses__item">
+              <img
+                routerLink="/characters/{{ house.name }}"
+                class="c-got-houses__img"
+                src="{{ house.logoURL }}"
+                alt="{{ house.name }}"
+              />
+              <p class="c-got-houses__img__name">{{ house.name }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </p-scrollPanel>
+</div>
+
+<div class="row c-got-footer">
+  <div class="col-4">
+    <p class="c-got-footer__option">
+      <a routerLink="/characters">PERSONAJES</a>
+    </p>
+  </div>
+  <div class="col-4">
+    <p class="c-got-footer__option" >
+      <a style="text-decoration: underline;" routerLink="/houses">CASAS</a>
+    </p>
+  </div>
+  <div class="col-4">
+    <p class="c-got-footer__option" >
+      <a routerLink="/">CRONOLOGIA</a>
+    </p>
+  </div>
+</div>
