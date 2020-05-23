@@ -13,7 +13,7 @@ export class GotServiceService {
   }
 
   getCharacter(name) {
-    return this.httpClient.get(environment.utl + 'characters/'+name);
+    return this.httpClient.get(environment.url + 'characters/'+name);
   }
 
   getHouses() {

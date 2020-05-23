@@ -16,7 +16,7 @@ export class CharDetailComponent implements OnInit {
   constructor(private character:GotServiceService) { }
 
   ngOnInit(): void {
-    this.character.getCharacter(this.charName).subscribe( (item:) => {
+    this.character.getCharacter(this.charName).subscribe( (item:any) => {
       this.name = item;
     });
   }

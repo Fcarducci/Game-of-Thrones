@@ -7,15 +7,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { HousesComponent } from './pages/houses/houses.component';
-// import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {CardModule} from 'primeng/card';
 import { CharDetailComponent } from './pages/char-detail/char-detail.component';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CharactersComponent, HousesComponent, CharDetailComponent],
   
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CardModule], 
-    // ScrollPanelModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CardModule, ScrollPanelModule, InputTextModule],
   providers: [],
   bootstrap: [AppComponent],
 })
