@@ -14,6 +14,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { HouseDetailComponent } from './pages/house-detail/house-detail.component';
 import { ChronologyComponent } from './pages/chronology/chronology.component';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { ChronologyComponent } from './pages/chronology/chronology.component';
     ScrollPanelModule,
     InputTextModule,
     FormsModule,
+    ProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

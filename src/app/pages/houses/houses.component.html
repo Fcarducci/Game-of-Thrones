@@ -1,8 +1,16 @@
 
 <div class="c-got-header">
-  <div>
-    <input type="text" pInputText />
-  </div>
+  <div class="c-got-header__searchBar">
+    <img class="c-got-header__searchBar__icon" src="../../../assets/img/search.png" alt="">
+    <input
+      class="c-got-header__searchBar__searchText"
+      placeholder="Buscar"
+      type="text"
+      pInputText
+      />
+    </div>
+    <!-- (keyup)="searchChracters()"
+    [(ngModel)]="searchChar" -->
   <div class="c-got-header__nav">
     <img
     routerLink="/"

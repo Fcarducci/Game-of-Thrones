@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GotServiceService } from 'src/app/shared/got-service.service';
-import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-characters',
