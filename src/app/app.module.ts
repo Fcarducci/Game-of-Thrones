@@ -16,6 +16,7 @@ import { HouseDetailComponent } from './pages/house-detail/house-detail.componen
 import { ChronologyComponent } from './pages/chronology/chronology.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         deps: [HttpClient],
       },
     }),
+    ProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

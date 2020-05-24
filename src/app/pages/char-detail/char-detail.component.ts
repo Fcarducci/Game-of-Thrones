@@ -25,10 +25,18 @@ export class CharDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.character.getCharacter(this.charName).subscribe((item: any) => {
-      this.singleChar = item;
-      console.log(item);
-    });
+    this.character
+      .getCharacter(this.charName)
+      .subscribe((item: any) => {
+        this.singleChar = item;
+      })
+      .add(() => {
+        let spinnerBox = document.getElementById('spinnerBox');
+        let charBox = document.getElementById('charBox');
+
+        spinnerBox.style.display = 'none';
+        charBox.style.display = '';
+      });
   }
 
   // Se cambia el idioma a Español

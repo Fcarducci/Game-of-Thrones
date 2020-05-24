@@ -17,10 +17,19 @@ export class HousesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.gotService.getHouses().subscribe((houses: any) => {
-      console.log(houses);
-      this.Houses = houses;
-    });
+    this.gotService
+      .getHouses()
+      .subscribe((houses: any) => {
+        console.log(houses);
+        this.Houses = houses;
+      })
+      .add(() => {
+        let spinnerBox = document.getElementById('spinnerBox');
+        let housesBox = document.getElementById('housesBox');
+
+        spinnerBox.style.display = 'none';
+        housesBox.style.display = '';
+      });
   }
 
   // Se cambia el idioma a Español

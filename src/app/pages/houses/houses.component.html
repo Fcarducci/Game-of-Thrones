@@ -1,9 +1,15 @@
 <div class="c-got-header">
-  <div>
+  <div class="c-got-header__searchBar">
+    <img
+      class="c-got-header__searchBar__icon"
+      src="../../../assets/img/search.png"
+      alt=""
+    />
     <input
       (keyup)="searchHouses()"
-      placeholder="Search"
       [(ngModel)]="searchHome"
+      class="c-got-header__searchBar__searchText"
+      placeholder="{{ 'houses.search' | translate }}"
       type="text"
       pInputText
     />
@@ -32,7 +38,21 @@
   </div>
 </div>
 
-<div class="c-got-houses">
+<div id="spinnerBox" class="got-spinner">
+  <div class="got-spinner__spinner">
+    <p-progressSpinner
+      [style]="{ width: '100px', height: '100px' }"
+      strokeWidth="5"
+      fill="#000000"
+      animationDuration="1s"
+    ></p-progressSpinner>
+  </div>
+  <div class="got-spinner__text">
+    <p class="got-spinner__text">CARGANDO</p>
+  </div>
+</div>
+
+<div id="housesBox" class="c-got-houses">
   <p-scrollPanel [style]="{ width: '85%', height: '670px', margin: 'auto' }">
     <div class="row">
       <div class="col-2" *ngFor="let house of Houses">

@@ -26,6 +26,24 @@ a:-webkit-any-link {
 
 .c-got-header {
 
+  display: flex;
+
+  &__searchBar {
+    margin: 25px 0 0 150px;
+
+    &__icon {
+      width: 14px;
+      filter: contrast(0%) sepia(1) hue-rotate(0deg) saturate(0%);
+    }
+
+    &__searchText {
+      font-family: Arial;
+      width: 40vw;
+      background-color: black;
+      border-width: 0px 0px 2px 0px ;
+    }
+  }
+
   &__nav {
     position: absolute;
     right: 200px;
@@ -44,6 +62,28 @@ a:-webkit-any-link {
     width: 45px;
     height: auto;
   } 
+}
+
+.got-spinner {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 85vh;
+  // visibility: visible;
+  display: "";
+
+  &__spinner {
+    position: relative;
+    bottom: 20px;
+  }
+
+  &__text {
+    position: relative;
+    top: 20px;
+  }
 }
 
 .c-got-footer {

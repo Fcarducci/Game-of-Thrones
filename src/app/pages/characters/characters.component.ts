@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GotServiceService } from 'src/app/shared/got-service.service';
-import { EventEmitter } from 'protractor';
+
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -21,10 +21,19 @@ export class CharactersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.gotService.getCharacters().subscribe((characters: any) => {
-      this.Characters = characters;
-      console.log(characters);
-    });
+    this.gotService
+      .getCharacters()
+      .subscribe((characters: any) => {
+        this.Characters = characters;
+        console.log(characters);
+      })
+      .add(() => {
+        let spinnerBox = document.getElementById('spinnerBox');
+        let charactersBox = document.getElementById('charactersBox');
+
+        spinnerBox.style.display = 'none';
+        charactersBox.style.display = '';
+      });
   }
 
   // Se cambia el idioma a Español
