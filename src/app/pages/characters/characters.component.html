@@ -1,9 +1,11 @@
 
 <div class="c-got-header">
-  <div>
+  <div class="c-got-header__searchBar">
+    <img class="c-got-header__searchBar__icon" src="../../../assets/img/search.png" alt="">
     <input
+      class="c-got-header__searchBar__searchText"
       (keyup)="searchChracters()"
-      placeholder="Search"
+      placeholder="Buscar"
       [(ngModel)]="searchChar"
       type="text"
       pInputText
