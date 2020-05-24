@@ -12,8 +12,26 @@
   </div>
 </div>
 
-<div>
-  
+<div class="c-got-chronology">
+  <p-scrollPanel
+  [style]="{ width: '100%', height: '600px', margin: 'auto' }"
+>
+  <mgl-timeline [focusOnOpen] = "true">
+    <!-- <ng-container class="c-got-chronology__entry"> -->
+
+      <mgl-timeline-entry class="c-got-chronology__entry" *ngFor="let entry of entries">
+        <!-- ; let i = index" (expand)="onExpand($event, i)"> -->
+        <mgl-timeline-entry-header>{{entry.age}}</mgl-timeline-entry-header>
+        <mgl-timeline-entry-content>
+          <div class="c-got-chronology__card">
+            {{entry.name}}
+            <img class="c-got-chronology__img" src="{{entry.image}}" alt="{{entry.name}}">
+          </div>
+        </mgl-timeline-entry-content>
+      </mgl-timeline-entry>
+    <!-- </ng-container> -->
+    </mgl-timeline>
+</p-scrollPanel>
 </div>
 
 

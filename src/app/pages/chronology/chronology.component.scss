@@ -1,0 +1,21 @@
+
+.c-got-chronology {
+  margin: 120px auto 44px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__entry {
+    width: 60%;
+    background-color: black;
+  }  
+
+  &__card {
+    background-color: black;
+  }
+
+  &__img {
+    width: 80px;
+    border-radius: 100%;
+  }
+}

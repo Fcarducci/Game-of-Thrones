@@ -18,6 +18,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MglTimelineModule } from 'angular-mgl-timeline';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +49,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
       },
     }),
     ProgressSpinnerModule,
+    BrowserAnimationsModule,
+    MglTimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent],

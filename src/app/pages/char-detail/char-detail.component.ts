@@ -24,8 +24,6 @@ export class CharDetailComponent implements OnInit {
       }
     });
   }
-
-  
   
   ngOnInit(): void {
     this.character
@@ -36,12 +34,9 @@ export class CharDetailComponent implements OnInit {
     .add(() => {
       this.character
       .getHouse(this.singleChar.house)
-      .subscribe((item: any) => {
-        console.log(item);
-        
+      .subscribe((item: any) => {        
         this.house = item[0];
       });
-
 
       let spinnerBox = document.getElementById('spinnerBox');
       let charBox = document.getElementById('charBox');
