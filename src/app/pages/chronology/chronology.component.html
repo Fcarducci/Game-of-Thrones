@@ -1,21 +1,23 @@
-
 <div class="c-got-header">
   <div class="c-got-header__nav">
     <img
-    routerLink="/"
-    class="c-got-header__home"
-    src="assets/img/home.png"
-    alt="homeButton"
+      routerLink="/"
+      class="c-got-header__home"
+      src="assets/img/home.png"
+      alt="homeButton"
     />
-    <img class="c-got-header__language" src="assets/img/spain.png" alt="spanish">
-    <img class="c-got-header__language" src="assets/img/uk.png" alt="english">
+    <img
+      class="c-got-header__language"
+      src="assets/img/spain.png"
+      alt="spanish"
+    />
+    <img class="c-got-header__language" src="assets/img/uk.png" alt="english" />
   </div>
 </div>
 
 <div>
-  
+  <button (click)="changeOrder()">clickme</button>
 </div>
-
 
 <div class="row c-got-footer">
   <div class="col-4">
@@ -24,13 +26,15 @@
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-footer__option" >
+    <p class="c-got-footer__option">
       <a routerLink="/houses">CASAS</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-footer__option" >
-      <a style="text-decoration: underline;" routerLink="/chronology">CRONOLOGIA</a>
+    <p class="c-got-footer__option">
+      <a style="text-decoration: underline;" routerLink="/chronology"
+        >CRONOLOGIA</a
+      >
     </p>
   </div>
 </div>
