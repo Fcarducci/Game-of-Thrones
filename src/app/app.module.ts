@@ -12,6 +12,8 @@ import { CardModule } from 'primeng/card';
 import { CharDetailComponent } from './pages/char-detail/char-detail.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { HouseDetailComponent } from './pages/house-detail/house-detail.component';
+import { ChronologyComponent } from './pages/chronology/chronology.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     CharactersComponent,
     HousesComponent,
     CharDetailComponent,
+    HouseDetailComponent,
+    ChronologyComponent,
   ],
 
   imports: [

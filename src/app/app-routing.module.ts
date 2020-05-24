@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { HousesComponent } from './pages/houses/houses.component';
 import { CharDetailComponent } from './pages/char-detail/char-detail.component';
+import { HouseDetailComponent } from './pages/house-detail/house-detail.component';
+import { ChronologyComponent } from './pages/chronology/chronology.component';
 
 const routes: Routes = [
   {
@@ -15,12 +17,20 @@ const routes: Routes = [
     component: CharactersComponent,
   },
   {
+    path: 'characters/:nameChar',
+    component: CharDetailComponent,
+  },
+  {
     path: 'houses',
     component: HousesComponent,
   },
   {
-    path: 'characters/:nameChar',
-    component: CharDetailComponent,
+    path: 'houses/:nameHouse',
+    component: HouseDetailComponent,
+  },
+  {
+    path: 'chronology',
+    component: ChronologyComponent,
   },
   {
     path: '',

@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
 export class CharDetailComponent implements OnInit {
   charName: string;
   singleChar;
-  // @Input() characterName: Array<any>;
 
   constructor(
     private character: GotServiceService,
@@ -25,7 +24,6 @@ export class CharDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.character.getCharacter(this.charName).subscribe((item: any) => {
-      console.log(item);
       this.singleChar = item;
     });
   }

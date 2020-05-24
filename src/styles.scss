@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 body{
@@ -21,4 +22,37 @@ body{
 a:-webkit-any-link {
   color: white;
   text-decoration: none;
+}
+
+.c-got-header {
+
+  &__nav {
+    position: absolute;
+    right: 200px;
+  }
+
+  &__home {
+    filter: contrast(0%) sepia(1) hue-rotate(0deg) saturate(0%);
+    cursor: pointer;
+    margin: 10px;
+    width: 45px;
+    height: auto;
+  }
+
+  &__language {
+    margin: 10px;
+    width: 45px;
+    height: auto;
+  } 
+}
+
+.c-got-footer {
+
+  text-align: center;
+
+  &__option {
+    font-size: 25px;
+    // margin-top: 25px;
+  }
+
 }
