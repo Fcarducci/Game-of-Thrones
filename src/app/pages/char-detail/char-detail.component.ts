@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GotServiceService } from 'src/app/shared/got-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class CharDetailComponent implements OnInit {
   charName: string;
   singleChar;
+  house;
 
   constructor(
     private character: GotServiceService,
@@ -24,19 +25,31 @@ export class CharDetailComponent implements OnInit {
     });
   }
 
+  
+  
   ngOnInit(): void {
     this.character
-      .getCharacter(this.charName)
+    .getCharacter(this.charName)
+    .subscribe((item: any) => {
+      this.singleChar = item;
+    })
+    .add(() => {
+      this.character
+      .getHouse(this.singleChar.house)
       .subscribe((item: any) => {
-        this.singleChar = item;
-      })
-      .add(() => {
-        let spinnerBox = document.getElementById('spinnerBox');
-        let charBox = document.getElementById('charBox');
-
-        spinnerBox.style.display = 'none';
-        charBox.style.display = '';
+        console.log(item);
+        
+        this.house = item[0];
       });
+
+
+      let spinnerBox = document.getElementById('spinnerBox');
+      let charBox = document.getElementById('charBox');
+      
+      spinnerBox.style.display = 'none';
+      charBox.style.display = '';
+    });
+    
   }
 
   // Se cambia el idioma a Español

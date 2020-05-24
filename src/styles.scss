@@ -61,6 +61,8 @@ a:-webkit-any-link {
     margin: 10px;
     width: 45px;
     height: auto;
+
+    cursor: pointer;
   } 
 }
 
@@ -72,7 +74,6 @@ a:-webkit-any-link {
   justify-content: center;
   width: 90vw;
   height: 85vh;
-  // visibility: visible;
   display: "";
 
   &__spinner {
@@ -92,7 +93,6 @@ a:-webkit-any-link {
 
   &__option {
     font-size: 25px;
-    // margin-top: 25px;
   }
 
 }
