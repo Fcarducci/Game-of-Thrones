@@ -1,72 +1,122 @@
 <div class="goBack">
-  <p routerLink="/characters"><img class="goBack__arrow" src="../../assets/img/leftArrow.png" alt="leftArrow"> Volver</p>
+  <p routerLink="/characters">
+    <img
+      class="goBack__arrow"
+      src="../../assets/img/leftArrow.png"
+      alt="leftArrow"
+    />
+    {{ "char-detail.back" | translate }}
+  </p>
 </div>
 <div class="c-got-header">
   <div class="c-got-header__nav">
     <img
-    routerLink="/"
-    class="c-got-header__home"
-    src="assets/img/home.png"
-    alt="homeButton"
+      routerLink="/"
+      class="c-got-header__home"
+      src="assets/img/home.png"
+      alt="homeButton"
     />
-    <img class="c-got-header__language" src="assets/img/spain.png" alt="spanish">
-    <img class="c-got-header__language" src="assets/img/uk.png" alt="english">
+    <img
+      (click)="changeLanguageToSpanish()"
+      [translate]="'charDetail.spanish'"
+      class="c-got-header__language"
+      src="assets/img/spain.png"
+      alt="spanish"
+    />
+    <img
+      (click)="changeLanguageToEnglish()"
+      [translate]="'char-detail.english'"
+      class="c-got-header__language"
+      src="assets/img/uk.png"
+      alt="english"
+    />
   </div>
 </div>
 
 <div class="c-got-char-detail">
   <div class="c-got-char-detail__picture">
-      <img
-        class="c-got-char-detail__picture__img"
-        src="{{ singleChar.image }}"
-        alt="{{ singleChar.name }}"
-        />
-      <p class="c-got-char-detail__picture__text">{{ singleChar.name }}</p>
+    <img
+      class="c-got-char-detail__picture__img"
+      src="{{ singleChar.image }}"
+      alt="{{ singleChar.name }}"
+    />
+    <p class="c-got-char-detail__picture__text">{{ singleChar.name }}</p>
   </div>
-  
+
   <div class="row c-got-char-detail__details">
     <div class="col-2">
-      <p class="c-got-char-detail__details__title">CASA</p>
-      <img src="" alt="{{singleChar.house}}" />
+      <p class="c-got-char-detail__details__title">
+        {{ "char-detail.house" | translate }}
+      </p>
+      <img src="" alt="{{ singleChar.house }}" />
+    </div>
+    <div class="col-2">
+      <p class="c-got-char-detail__details__title">
+        {{ "char-detail.allegiance" | translate }}
+      </p>
+      <p-scrollPanel
+        [style]="{ width: '100%', height: '200px', margin: 'auto' }"
+      >
+        <p
+          class="c-got-char-detail__details__content"
+          *ngFor="let allegiance of singleChar.allegiances"
+        >
+          {{ allegiance }}
+        </p>
+      </p-scrollPanel>
+    </div>
+    <div class="col-2">
+      <p class="c-got-char-detail__details__title">
+        {{ "char-detail.appearances" | translate }}
+      </p>
+      <p-scrollPanel
+        [style]="{ width: '100%', height: '200px', margin: 'auto' }"
+      >
+        <p
+          class="c-got-char-detail__details__content"
+          *ngFor="let appearance of singleChar.appearances"
+        >
+          {{ appearance }}
+        </p>
+      </p-scrollPanel>
+    </div>
+    <div class="col-2">
+      <p class="c-got-char-detail__details__title">
+        {{ "char-detail.father" | translate }}
+      </p>
+      <p class="c-got-char-detail__details__content">
+        {{ singleChar.father }}
+      </p>
+    </div>
+    <div class="col-2">
+      <p class="c-got-char-detail__details__title">
+        {{ "char-detail.siblings" | translate }}
+      </p>
+      <p-scrollPanel
+        [style]="{ width: '100%', height: '200px', margin: 'auto' }"
+      >
+        <p
+          class="c-got-char-detail__details__content"
+          *ngFor="let sibling of singleChar.siblings"
+        >
+          {{ sibling }}
+        </p>
+      </p-scrollPanel>
+    </div>
+    <div class="col-2">
+      <p class="c-got-char-detail__details__title">
+        {{ "char-detail.titles" | translate }}
+      </p>
+      <p-scrollPanel
+        [style]="{ width: '100%', height: '200px', margin: 'auto' }"
+      >
+        <p
+          class="c-got-char-detail__details__content"
+          *ngFor="let title of singleChar.titles"
+        >
+          {{ title }}
+        </p>
+      </p-scrollPanel>
+    </div>
   </div>
-  <div class="col-2">
-    <p class="c-got-char-detail__details__title">ALIANZAS</p>
-  <p-scrollPanel [style]="{ width: '100%', height: '200px', margin: 'auto' }">
-    <p class="c-got-char-detail__details__content" *ngFor="let allegiance of singleChar.allegiances">
-      {{ allegiance }}
-    </p>
-  </p-scrollPanel>
-  </div>
-  <div class="col-2">
-    <p class="c-got-char-detail__details__title">APARICIONES</p>
-  <p-scrollPanel [style]="{ width: '100%', height: '200px', margin: 'auto' }">
-    <p class="c-got-char-detail__details__content" *ngFor="let appearance of singleChar.appearances">
-      {{ appearance }}
-    </p>
-  </p-scrollPanel>
-  </div>
-  <div class="col-2">
-    <p class="c-got-char-detail__details__title">PADRE</p>
-    <p class="c-got-char-detail__details__content">
-      {{ singleChar.father }}
-    </p>
-  </div>
-  <div class="col-2">
-    <p class="c-got-char-detail__details__title">HERMANOS</p>
-  <p-scrollPanel [style]="{ width: '100%', height: '200px', margin: 'auto' }">
-    <p class="c-got-char-detail__details__content" *ngFor="let sibling of singleChar.siblings">
-      {{ sibling }}
-    </p>
-  </p-scrollPanel>
-  </div>
-  <div class="col-2">
-    <p class="c-got-char-detail__details__title">TITULOS</p>
-  <p-scrollPanel [style]="{ width: '100%', height: '200px', margin: 'auto' }">
-    <p class="c-got-char-detail__details__content" *ngFor="let title of singleChar.titles">
-      {{ title }}
-    </p>
-  </p-scrollPanel>
-  </div>
-</div>
-
 </div>

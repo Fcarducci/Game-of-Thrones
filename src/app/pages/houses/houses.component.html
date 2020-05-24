@@ -1,35 +1,52 @@
-
 <div class="c-got-header">
   <div>
-    <input type="text" pInputText />
+    <input
+      (keyup)="searchHouses()"
+      placeholder="Search"
+      [(ngModel)]="searchHome"
+      type="text"
+      pInputText
+    />
   </div>
   <div class="c-got-header__nav">
     <img
-    routerLink="/"
-    class="c-got-header__home"
-    src="assets/img/home.png"
-    alt="homeButton"
+      routerLink="/"
+      class="c-got-header__home"
+      src="assets/img/home.png"
+      alt="homeButton"
     />
-    <img class="c-got-header__language" src="assets/img/spain.png" alt="spanish">
-    <img class="c-got-header__language" src="assets/img/uk.png" alt="english">
+    <img
+      (click)="changeLanguageToSpanish()"
+      class="c-got-header__language"
+      [translate]="'houses.espanish'"
+      src="assets/img/spain.png"
+      alt="spanish"
+    />
+    <img
+      (click)="changeLanguageToEnglish()"
+      class="c-got-header__language"
+      [translate]="'houses.english'"
+      src="assets/img/uk.png"
+      alt="english"
+    />
   </div>
 </div>
 
 <div class="c-got-houses">
   <p-scrollPanel [style]="{ width: '85%', height: '670px', margin: 'auto' }">
     <div class="row">
-      <div class="col-2" *ngFor="let house of houses">
-          <div class="c-got-houses__gallery">
-            <div class="c-got-houses__item">
-              <img
-                routerLink="/houses/{{ house.name }}"
-                class="c-got-houses__img"
-                src="{{ house.logoURL }}"
-                alt="{{ house.name }}"
-              />
-              <p class="c-got-houses__img__name">{{ house.name }}</p>
-            </div>
+      <div class="col-2" *ngFor="let house of Houses">
+        <div class="c-got-houses__gallery">
+          <div class="c-got-houses__item">
+            <img
+              routerLink="/houses/{{ house.name }}"
+              class="c-got-houses__img"
+              src="{{ house.logoURL }}"
+              alt="{{ house.name }}"
+            />
+            <p class="c-got-houses__img__name">{{ house.name }}</p>
           </div>
+        </div>
       </div>
     </div>
   </p-scrollPanel>
@@ -38,17 +55,19 @@
 <div class="row c-got-footer">
   <div class="col-4">
     <p class="c-got-footer__option">
-      <a routerLink="/characters">PERSONAJES</a>
+      <a routerLink="/characters">{{ "houses.characters" | translate }}</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-footer__option" >
-      <a style="text-decoration: underline;" routerLink="/houses">CASAS</a>
+    <p class="c-got-footer__option">
+      <a style="text-decoration: underline;" routerLink="/houses">{{
+        "houses.houses" | translate
+      }}</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-footer__option" >
-      <a routerLink="/chronology">CRONOLOGIA</a>
+    <p class="c-got-footer__option">
+      <a routerLink="/chronology">{{ "houses.chronology" | translate }}</a>
     </p>
   </div>
 </div>

@@ -2,26 +2,38 @@
   <div class="c-got-header">
     <div class="c-got-header__nav">
       <div class="c-got-header__languages">
-        <img class="c-got-header__language" src="assets/img/spain.png" alt="spanish">
-        <img class="c-got-header__language" src="assets/img/uk.png" alt="english">
+        <img
+          (click)="changeLanguageToSpanish()"
+          class="c-got-header__language"
+          [translate]="'home.espanish'"
+          src="assets/img/spain.png"
+          alt="spanish"
+        />
+        <img
+          (click)="changeLanguageToEnglish()"
+          class="c-got-header__language"
+          [translate]="'home.english'"
+          src="assets/img/uk.png"
+          alt="english"
+        />
       </div>
     </div>
   </div>
-  <p class="c-got-home__title">Game Of Thrones</p>
+  <p class="c-got-home__title">{{ "home.title" | translate }}</p>
   <div class="row c-got-footer">
     <div class="col-4">
       <p class="c-got-footer__option">
-        <a routerLink="/characters">PERSONAJES</a>
+        <a routerLink="/characters">{{ "home.characters" | translate }}</a>
       </p>
     </div>
     <div class="col-4">
-      <p class="c-got-footer__option" >
-        <a routerLink="/houses">CASAS</a>
+      <p class="c-got-footer__option">
+        <a routerLink="/houses">{{ "home.houses" | translate }}</a>
       </p>
     </div>
     <div class="col-4">
-      <p class="c-got-footer__option" >
-        <a routerLink="/chronology">CRONOLOGIA</a>
+      <p class="c-got-footer__option">
+        <a routerLink="/chronology">{{ "home.chronology" | translate }}</a>
       </p>
     </div>
   </div>

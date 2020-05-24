@@ -1,0 +1,53 @@
+{
+  "home": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "title": "JUEGO DE TRONOS",
+    "characters": "PERSONAJES",
+    "houses": "CASAS",
+    "chronology": "CRONOLOGIA"
+  },
+  "characters": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "title": "JUEGO DE TRONOS",
+    "characters": "PERSONAJES",
+    "houses": "CASAS",
+    "chronology": "CRONOLOGIA"
+  },
+  "houses": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "title": "JUEGO DE TRONOS",
+    "characters": "PERSONAJES",
+    "houses": "CASAS",
+    "chronology": "CRONOLOGIA"
+  },
+  "house-detail": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "back": "VOLVER",
+    "words": "LEMA",
+    "seat": "SEDE",
+    "region": "REGION",
+    "allegiance": "ALIANZAS",
+    "religion": "RELIGION",
+    "created": "FUNDACION"
+  },
+  "char-detail": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "back": "VOLVER",
+    "house": "CASA",
+    "allegiance": "ALIANZAS",
+    "appearances": "APARICIONES",
+    "father": "PADRE",
+    "siblings": "HERMANOS",
+    "titles": "TITULOS"
+  }
+}

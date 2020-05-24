@@ -1,68 +1,109 @@
 <div class="goBack">
-  <p routerLink="/houses"><img class="goBack__arrow" src="../../assets/img/leftArrow.png" alt="leftArrow"> Volver</p>
+  <p routerLink="/houses">
+    <img
+      class="goBack__arrow"
+      src="../../assets/img/leftArrow.png"
+      alt="leftArrow"
+    />
+    {{ "house-detail.back" | translate }}
+  </p>
 </div>
 <div class="c-got-header">
   <div class="c-got-header__nav">
     <img
-    routerLink="/"
-    class="c-got-header__home"
-    src="assets/img/home.png"
-    alt="homeButton"
+      routerLink="/"
+      class="c-got-header__home"
+      src="assets/img/home.png"
+      alt="homeButton"
     />
-    <img class="c-got-header__language" src="assets/img/spain.png" alt="spanish">
-    <img class="c-got-header__language" src="assets/img/uk.png" alt="english">
+    <img
+      (click)="changeLanguageToSpanish()"
+      [translate]="'charDetail.spanish'"
+      class="c-got-header__language"
+      src="assets/img/spain.png"
+      alt="spanish"
+    />
+    <img
+      (click)="changeLanguageToEnglish()"
+      [translate]="'char-detail.english'"
+      class="c-got-header__language"
+      src="assets/img/uk.png"
+      alt="english"
+    />
   </div>
 </div>
 
 <div class="c-got-house-detail">
   <div class="c-got-house-detail__picture">
-      <img
-        class="c-got-house-detail__picture__img"
-        src="{{ singleHouse.logoURL }}"
-        alt="{{ singleHouse.name }}"
-        />
-      <p class="c-got-house-detail__picture__text">{{ singleHouse.name }}</p>
+    <img
+      class="c-got-house-detail__picture__img"
+      src="{{ singleHouse.logoURL }}"
+      alt="{{ singleHouse.name }}"
+    />
+    <p class="c-got-house-detail__picture__text">{{ singleHouse.name }}</p>
   </div>
-  
+
   <div class="row c-got-house-detail__details">
     <div class="col-2">
-      <p class="c-got-house-detail__details__title">LEMA</p>
+      <p class="c-got-house-detail__details__title">
+        {{ "house-detail.words" | translate }}
+      </p>
       <p class="c-got-house-detail__details__content">
         {{ singleHouse.words }}
-      </p>  
-  </div>
-  <div class="col-2">
-    <p class="c-got-house-detail__details__title">SEDE</p>
-    <p class="c-got-house-detail__details__content">
-      {{ singleHouse.seat }}
-    </p>
-  </div>
-  <div class="col-2">
-    <p class="c-got-house-detail__details__title">REGION</p>
-      <p class="c-got-house-detail__details__content" *ngFor="let appearance of singleHouse.region">
-        {{ appearance }}
       </p>
-  </div>
-  <div class="col-2">
-    <p class="c-got-house-detail__details__title">ALIANZAS</p>
-    <p-scrollPanel [style]="{ width: '100%', height: '200px', margin: 'auto' }">
-      <p class="c-got-house-detail__details__content" *ngFor="let allegiance of singleHouse.allegiances">
-        {{ allegiance }}
+    </div>
+    <div class="col-2">
+      <p class="c-got-house-detail__details__title">
+        {{ "house-detail.seat" | translate }}
       </p>
-    </p-scrollPanel>
+      <p class="c-got-house-detail__details__content">
+        {{ singleHouse.seat }}
+      </p>
+    </div>
+    <div class="col-2">
+      <p class="c-got-house-detail__details__title">
+        {{ "house-detail.region" | translate }}
+      </p>
+      <p
+        class="c-got-house-detail__details__content"
+        *ngFor="let region of singleHouse.region"
+      >
+        {{ region }}
+      </p>
+    </div>
+    <div class="col-2">
+      <p class="c-got-house-detail__details__title">
+        {{ "house-detail.allegiance" | translate }}
+      </p>
+      <p-scrollPanel
+        [style]="{ width: '100%', height: '200px', margin: 'auto' }"
+      >
+        <p
+          class="c-got-house-detail__details__content"
+          *ngFor="let allegiance of singleHouse.allegiance"
+        >
+          {{ allegiance }}
+        </p>
+      </p-scrollPanel>
+    </div>
+    <div class="col-2">
+      <p class="c-got-house-detail__details__title">
+        {{ "house-detail.religion" | translate }}
+      </p>
+      <p
+        class="c-got-house-detail__details__content"
+        *ngFor="let aReligion of singleHouse.religion"
+      >
+        {{ aReligion }}
+      </p>
+    </div>
+    <div class="col-2">
+      <p class="c-got-house-detail__details__title">
+        {{ "house-detail.created" | translate }}
+      </p>
+      <p class="c-got-house-detail__details__content">
+        {{ singleHouse.createdAt | date: "dd-MM-yyyy" }}
+      </p>
+    </div>
   </div>
-  <div class="col-2">
-    <p class="c-got-house-detail__details__title">RELIGIONES</p>
-    <p class="c-got-house-detail__details__content" *ngFor="let aReligion of singleHouse.religion">
-      {{ aReligion }}
-    </p>
-  </div>
-  <div class="col-2">
-    <p class="c-got-house-detail__details__title">FUNDACION</p>
-    <p class="c-got-house-detail__details__content">
-      {{ singleHouse.createdAt | date: 'dd-MM-yyyy' }}
-    </p>
-  </div>
-</div>
-
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { GotServiceService } from 'src/app/shared/got-service.service';
 import { EventEmitter } from 'protractor';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-characters',
@@ -8,33 +9,48 @@ import { EventEmitter } from 'protractor';
   styleUrls: ['./characters.component.scss'],
 })
 export class CharactersComponent implements OnInit {
-  characters: Array<any>;
+  Characters: Array<any>;
   @Input() character: Array<any>;
   searchChar: string;
   charName: string;
   arraySearch;
 
-  constructor(private gotService: GotServiceService) {}
+  constructor(
+    private gotService: GotServiceService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.gotService.getCharacters().subscribe((characters: any) => {
-      this.characters = characters;
-      console.log(this.characters.length);
+      this.Characters = characters;
+      console.log(characters);
     });
   }
 
+  // Se cambia el idioma a Español
+  changeLanguageToSpanish(): void {
+    this.translate.use('es');
+    console.log('Idioma cambiado al Español');
+  }
+
+  // Se cambia el idioma a Inglés
+  changeLanguageToEnglish(): void {
+    this.translate.use('en');
+    console.log('Idioma cambiado al Inglés');
+  }
+
   searchChracters() {
-    this.characters = [];
+    this.Characters = [];
 
     this.gotService.getCharacters().subscribe((characters: any) => {
-      this.characters = characters.filter((item) => {
+      this.Characters = characters.filter((item) => {
         let cadena = item.name.toLowerCase();
 
-        if (cadena.indexOf(this.searchChar) != -1) {
+        if (cadena.indexOf(this.searchChar.toLowerCase()) != -1) {
           return item;
         }
       });
     });
-    this.characters;
+    this.Characters;
   }
 }

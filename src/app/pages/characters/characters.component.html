@@ -1,4 +1,3 @@
-
 <div class="c-got-header">
   <div>
     <input
@@ -11,31 +10,43 @@
   </div>
   <div class="c-got-header__nav">
     <img
-    routerLink="/"
-    class="c-got-header__home"
-    src="assets/img/home.png"
-    alt="homeButton"
+      routerLink="/"
+      class="c-got-header__home"
+      src="assets/img/home.png"
+      alt="homeButton"
     />
-    <img class="c-got-header__language" src="assets/img/spain.png" alt="spanish">
-    <img class="c-got-header__language" src="assets/img/uk.png" alt="english">
+    <img
+      (click)="changeLanguageToSpanish()"
+      [translate]="'characters.spanish'"
+      class="c-got-header__language"
+      src="assets/img/spain.png"
+      alt="spanish"
+    />
+    <img
+      (click)="changeLanguageToEnglish()"
+      [translate]="'characters.english'"
+      class="c-got-header__language"
+      src="assets/img/uk.png"
+      alt="english"
+    />
   </div>
 </div>
 
 <div class="c-got-characters">
   <p-scrollPanel [style]="{ width: '85%', height: '670px', margin: 'auto' }">
     <div class="row">
-      <div class="col-2" *ngFor="let character of characters">
-          <div class="c-got-characters__gallery">
-            <div class="c-got-characters__item">
-              <img
-                routerLink="/characters/{{ character.name }}"
-                class="c-got-characters__img"
-                src="{{ character.image }}"
-                alt="{{ character.name }}"
-              />
-              <p class="c-got-characters__img__name">{{ character.name }}</p>
-            </div>
+      <div class="col-2" *ngFor="let character of Characters">
+        <div class="c-got-characters__gallery">
+          <div class="c-got-characters__item">
+            <img
+              routerLink="/characters/{{ character.name }}"
+              class="c-got-characters__img"
+              src="{{ character.image }}"
+              alt="{{ character.name }}"
+            />
+            <p class="c-got-characters__img__name">{{ character.name }}</p>
           </div>
+        </div>
       </div>
     </div>
   </p-scrollPanel>
@@ -44,17 +55,19 @@
 <div class="row c-got-footer">
   <div class="col-4">
     <p class="c-got-footer__option">
-      <a style="text-decoration: underline;" routerLink="/characters">PERSONAJES</a>
+      <a style="text-decoration: underline;" routerLink="/characters">{{
+        "characters.characters" | translate
+      }}</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-footer__option" >
-      <a routerLink="/houses">CASAS</a>
+    <p class="c-got-footer__option">
+      <a routerLink="/houses">{{ "characters.houses" | translate }}</a>
     </p>
   </div>
   <div class="col-4">
-    <p class="c-got-footer__option" >
-      <a routerLink="/chronology">CRONOLOGIA</a>
+    <p class="c-got-footer__option">
+      <a routerLink="/chronology">{{ "characters.chronology" | translate }}</a>
     </p>
   </div>
 </div>
