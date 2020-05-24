@@ -27,6 +27,14 @@ export class HouseDetailComponent implements OnInit {
     this.house.getHouse(this.houseName).subscribe((item: any) => {
       this.singleHouse = item[0];
     })
+    .add(()=> {
+      let spinnerBox = document.getElementById("spinnerBox");
+      let houseBox = document.getElementById("houseBox");
+
+      spinnerBox.style.display = "none";
+      houseBox.style.display = "";
+    });
+
   }
 
 }

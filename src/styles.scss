@@ -62,7 +62,28 @@ a:-webkit-any-link {
     width: 45px;
     height: auto;
   } 
+}
 
+.got-spinner {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 85vh;
+  // visibility: visible;
+  display: "";
+
+  &__spinner {
+    position: relative;
+    bottom: 20px;
+  }
+
+  &__text {
+    position: relative;
+    top: 20px;
+  }
 }
 
 .c-got-footer {

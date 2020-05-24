@@ -25,6 +25,13 @@ export class CharDetailComponent implements OnInit {
   ngOnInit(): void {
     this.character.getCharacter(this.charName).subscribe((item: any) => {
       this.singleChar = item;
+    })
+    .add(()=> {
+      let spinnerBox = document.getElementById("spinnerBox");
+      let charBox = document.getElementById("charBox");
+
+      spinnerBox.style.display = "none";
+      charBox.style.display = "";
     });
   }
 }
