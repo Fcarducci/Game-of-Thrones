@@ -19,6 +19,13 @@ export class CharactersComponent implements OnInit {
     this.gotService.getCharacters().subscribe((characters: any) => {
       this.characters = characters;
       console.log(this.characters.length);
+    })
+    .add(()=> {
+      let spinnerBox = document.getElementById("spinnerBox");
+      let charactersBox = document.getElementById("charactersBox");
+
+      spinnerBox.style.display = "none";
+      charactersBox.style.display = "";
     });
   }
 
