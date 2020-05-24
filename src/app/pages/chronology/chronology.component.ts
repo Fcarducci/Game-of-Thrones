@@ -18,6 +18,7 @@ export class ChronologyComponent implements OnInit {
     this.chronology.getCharacters().subscribe((item: any) => {
       this.character = item;
     });
+    this.changeOrder();
   }
 
   changeOrder() {

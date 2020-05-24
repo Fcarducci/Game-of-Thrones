@@ -1,3 +1,7 @@
+<div class="got-order-chronology">
+  <button (click)="changeOrder()">ascendete/descendente</button>
+</div>
+
 <div class="c-got-header">
   <div class="c-got-header__nav">
     <img
@@ -19,25 +23,22 @@
   <p-scrollPanel
   [style]="{ width: '100%', height: '600px', margin: 'auto' }"
 >
-  <mgl-timeline [focusOnOpen] = "true">
-    <!-- <ng-container class="c-got-chronology__entry"> -->
-
-      <mgl-timeline-entry class="c-got-chronology__entry" *ngFor="let character of ageOrder">
-        <!-- ; let i = index" (expand)="onExpand($event, i)"> -->
-        <mgl-timeline-entry-header>{{character.age.age}}</mgl-timeline-entry-header>
-        <mgl-timeline-entry-content>
-          <div class="c-got-chronology__card">
-            {{character.name}}
-            <img class="c-got-chronology__img" src="{{character.image}}" alt="{{character.name}}">
-          </div>
-        </mgl-timeline-entry-content>
-      </mgl-timeline-entry>
-    <!-- </ng-container> -->
-    </mgl-timeline>
+<mgl-timeline [focusOnOpen] = "false" [toggle]="false" >
+  <!-- <ng-container class="c-got-chronology__entry"> -->
+    <mgl-timeline-entry-dot>{{ageOrder[0].age.age}}</mgl-timeline-entry-dot>
+    <mgl-timeline-entry class="c-got-chronology__entry expanded" *ngFor="let character of ageOrder">
+      <!-- ; let i = index" (expand)="onExpand($event, i)"> -->
+          <mgl-timeline-entry-header class="c-got-chronology__header">{{character.age.age}}</mgl-timeline-entry-header>
+          <mgl-timeline-entry-content class="c-got-chronology__content">
+            <div class="c-got-chronology__card">
+              <p class="c-got-chronology__card__text"> {{character.name}} </p>
+              <img class="c-got-chronology__card__img" src="{{character.image}}" alt="{{character.name}}">
+            </div>
+          </mgl-timeline-entry-content>
+        </mgl-timeline-entry>
+        <!-- </ng-container> -->
+      </mgl-timeline>
 </p-scrollPanel>
-<div>
-  <button (click)="changeOrder()">clickme</button>
-</div>
 
 <div class="row c-got-footer">
   <div class="col-4">

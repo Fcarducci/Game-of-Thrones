@@ -15,13 +15,18 @@
 }
 
 body{
-  overflow-x: hidden;
   background-color: #000000;
+  overflow-x: hidden;
 }
 
 a:-webkit-any-link {
   color: white;
   text-decoration: none;
+}
+
+button {
+  background-color: black;
+  border: none;
 }
 
 .c-got-header {
