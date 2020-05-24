@@ -1,6 +1,12 @@
 <div style="display: flex;">
   <div>
-    <input type="text" pInputText />
+    <input
+      (keyup)="searchChracters()"
+      placeholder="Search"
+      [(ngModel)]="searchChar"
+      type="text"
+      pInputText
+    />
   </div>
   <div class="c-got-home__languages">
     <img
