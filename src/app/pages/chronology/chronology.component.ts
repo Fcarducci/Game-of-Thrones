@@ -4,50 +4,48 @@ import { GotServiceService } from 'src/app/shared/got-service.service';
 @Component({
   selector: 'app-chronology',
   templateUrl: './chronology.component.html',
-  styleUrls: ['./chronology.component.scss']
+  styleUrls: ['./chronology.component.scss'],
 })
 export class ChronologyComponent implements OnInit {
+  character: any;
+  ageOrder: any;
+  arrayCharWithAge: any;
+  controller: boolean = true;
 
-  character;
-  entries: Array<any> = [
-    {
-      age: 14,
-      name: "Lyanna Mormont",
-      image: "https://vignette.wikia.nocookie.net/gameofthrones/images/d/d3/JonSnowSeason8HB.jpg/revision/latest/scale-to-width-down/333?cb=20190401173347"
-    },
-    {
-      age: 17,
-      name: "Jasoon Mormont",
-      image: "https://vignette.wikia.nocookie.net/gameofthrones/images/d/d3/JonSnowSeason8HB.jpg/revision/latest/scale-to-width-down/333?cb=20190401173347"
-    },
-    {
-      age: 44,
-      name: "Tony Stark",
-      image: "https://vignette.wikia.nocookie.net/gameofthrones/images/d/d3/JonSnowSeason8HB.jpg/revision/latest/scale-to-width-down/333?cb=20190401173347"
-    },
-    {
-      age: 29,
-      name: "John Snow",
-      image: "https://vignette.wikia.nocookie.net/gameofthrones/images/d/d3/JonSnowSeason8HB.jpg/revision/latest/scale-to-width-down/333?cb=20190401173347"
-    },
-    {
-      age: 34,
-      name: "Ned Stark",
-      image: "https://vignette.wikia.nocookie.net/gameofthrones/images/d/d3/JonSnowSeason8HB.jpg/revision/latest/scale-to-width-down/333?cb=20190401173347"
-    },
-  ];
-
-  constructor(private chronology: GotServiceService) { }
+  constructor(private chronology: GotServiceService) {}
 
   ngOnInit(): void {
-    this.chronology.getCharacters().subscribe( (item: any) => {
-      console.log(item);
+    this.chronology.getCharacters().subscribe((item: any) => {
       this.character = item;
     });
   }
 
-  // onExpand() {
+  changeOrder() {
+    this.controller = !this.controller;
+    this.arrayCharWithAge = this.character.filter((item) => {
+      if (item.age) {
+        return Object.keys(item.age).length > 1;
+      }
+    });
 
-  // }
-
+    if (this.controller) {
+      this.ageOrder = this.arrayCharWithAge.sort((a, b) => {
+        if (a.age.age > b.age.age) return 1;
+        if (a.age.age < b.age.age) return -1;
+        return 0;
+      });
+      // for (let item of this.ageOrder) {
+      //   console.log(item.age);
+      // }
+    } else {
+      this.ageOrder = this.arrayCharWithAge.sort((a, b) => {
+        if (a.age.age < b.age.age) return 1;
+        if (a.age.age > b.age.age) return -1;
+        return 0;
+      });
+      // for (let item of this.ageOrder) {
+      //   console.log(item.age);
+      // }
+    }
+  }
 }
