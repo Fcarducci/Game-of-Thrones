@@ -47,6 +47,10 @@ export class CharDetailComponent implements OnInit {
     
   }
 
+  back() {
+    window.history.go(-1);
+  }
+
   // Se cambia el idioma a Español
   changeLanguageToSpanish(): void {
     this.translate.use('es');
