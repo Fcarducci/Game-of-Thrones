@@ -55,5 +55,15 @@
     "father": "PADRE",
     "siblings": "HERMANOS",
     "titles": "TITULOS"
+  },
+  "chronology": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "loading": "CARGANDO",
+    "characters": "PERSONAJES",
+    "houses": "CASAS",
+    "chronology": "CRONOLOGIA",
+    "button": "ASCENDENTE/DESCENDENTE"
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GotServiceService } from 'src/app/shared/got-service.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chronology',
@@ -12,13 +13,27 @@ export class ChronologyComponent implements OnInit {
   arrayCharWithAge: any;
   controller: boolean = true;
 
-  constructor(private chronology: GotServiceService) {}
+  constructor(
+    private chronology: GotServiceService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.chronology.getCharacters().subscribe((item: any) => {
       this.character = item;
     });
     this.changeOrder();
+  }
+  // Se cambia el idioma a Español
+  changeLanguageToSpanish(): void {
+    this.translate.use('es');
+    console.log('Idioma cambiado al Español');
+  }
+
+  // Se cambia el idioma a Inglés
+  changeLanguageToEnglish(): void {
+    this.translate.use('en');
+    console.log('Idioma cambiado al Inglés');
   }
 
   changeOrder() {

@@ -1,5 +1,7 @@
 <div class="got-order-chronology">
-  <button (click)="changeOrder()">ascendete/descendente</button>
+  <button (click)="changeOrder()">
+    {{ "chronology.button" | translate }}
+  </button>
 </div>
 
 <div class="c-got-header">
@@ -11,51 +13,69 @@
       alt="homeButton"
     />
     <img
+      (click)="changeLanguageToSpanish()"
+      [translate]="'charDetail.spanish'"
       class="c-got-header__language"
       src="assets/img/spain.png"
       alt="spanish"
     />
-    <img class="c-got-header__language" src="assets/img/uk.png" alt="english" />
+    <img
+      (click)="changeLanguageToEnglish()"
+      [translate]="'char-detail.english'"
+      class="c-got-header__language"
+      src="assets/img/uk.png"
+      alt="english"
+    />
   </div>
 </div>
 
 <div class="c-got-chronology">
-  <p-scrollPanel
-  [style]="{ width: '100%', height: '600px', margin: 'auto' }"
->
-<mgl-timeline [focusOnOpen] = "false" [toggle]="false" >
-  <!-- <ng-container class="c-got-chronology__entry"> -->
-    <mgl-timeline-entry-dot>{{ageOrder[0].age.age}}</mgl-timeline-entry-dot>
-    <mgl-timeline-entry class="c-got-chronology__entry expanded" *ngFor="let character of ageOrder">
-      <!-- ; let i = index" (expand)="onExpand($event, i)"> -->
-          <mgl-timeline-entry-header class="c-got-chronology__header">{{character.age.age}}</mgl-timeline-entry-header>
-          <mgl-timeline-entry-content class="c-got-chronology__content">
-            <div class="c-got-chronology__card">
-              <p class="c-got-chronology__card__text"> {{character.name}} </p>
-              <img class="c-got-chronology__card__img" src="{{character.image}}" alt="{{character.name}}">
-            </div>
-          </mgl-timeline-entry-content>
-        </mgl-timeline-entry>
-        <!-- </ng-container> -->
-      </mgl-timeline>
-</p-scrollPanel>
-
-<div class="row c-got-footer">
-  <div class="col-4">
-    <p class="c-got-footer__option">
-      <a routerLink="/characters">PERSONAJES</a>
-    </p>
-  </div>
-  <div class="col-4">
-    <p class="c-got-footer__option">
-      <a routerLink="/houses">CASAS</a>
-    </p>
-  </div>
-  <div class="col-4">
-    <p class="c-got-footer__option">
-      <a style="text-decoration: underline;" routerLink="/chronology"
-        >CRONOLOGIA</a
+  <p-scrollPanel [style]="{ width: '100%', height: '600px', margin: 'auto' }">
+    <mgl-timeline [focusOnOpen]="false" [toggle]="false">
+      <!-- <ng-container class="c-got-chronology__entry"> -->
+      <mgl-timeline-entry-dot>{{ ageOrder[0].age.age }}</mgl-timeline-entry-dot>
+      <mgl-timeline-entry
+        class="c-got-chronology__entry expanded"
+        *ngFor="let character of ageOrder"
       >
-    </p>
+        <!-- ; let i = index" (expand)="onExpand($event, i)"> -->
+        <mgl-timeline-entry-header class="c-got-chronology__header">{{
+          character.age.age
+        }}</mgl-timeline-entry-header>
+        <mgl-timeline-entry-content class="c-got-chronology__content">
+          <div class="c-got-chronology__card">
+            <p class="c-got-chronology__card__text">{{ character.name }}</p>
+            <img
+              class="c-got-chronology__card__img"
+              src="{{ character.image }}"
+              alt="{{ character.name }}"
+            />
+          </div>
+        </mgl-timeline-entry-content>
+      </mgl-timeline-entry>
+      <!-- </ng-container> -->
+    </mgl-timeline>
+  </p-scrollPanel>
+
+  <div class="row c-got-footer">
+    <div class="col-4">
+      <p class="c-got-footer__option">
+        <a routerLink="/characters">{{
+          "chronology.characters" | translate
+        }}</a>
+      </p>
+    </div>
+    <div class="col-4">
+      <p class="c-got-footer__option">
+        <a routerLink="/houses">{{ "chronology.houses" | translate }}</a>
+      </p>
+    </div>
+    <div class="col-4">
+      <p class="c-got-footer__option">
+        <a style="text-decoration: underline;" routerLink="/chronology">{{
+          "chronology.chronology" | translate
+        }}</a>
+      </p>
+    </div>
   </div>
 </div>

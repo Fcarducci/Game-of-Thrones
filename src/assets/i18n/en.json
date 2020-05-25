@@ -53,5 +53,15 @@
     "father": "FATHER",
     "siblings": "SIBLINGS",
     "titles": "TITLES"
+  },
+  "chronology": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "loading": "LOADING",
+    "characters": "CHARACTERS",
+    "houses": "HOUSES",
+    "chronology": "CHRONOLOGY",
+    "button": "UPWARD/FALLING"
   }
 }
