@@ -1,0 +1,67 @@
+{
+  "home": {
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English",
+    "title": "GAME OF THRONES",
+    "characters": "CHARACTERS",
+    "houses": "HOUSES",
+    "chronology": "CHRONOLOGY"
+  },
+  "characters": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "loading": "LOADING",
+    "search": "Search",
+    "characters": "CHARACTERS",
+    "houses": "HOUSES",
+    "chronology": "CHRONOLOGY"
+  },
+  "houses": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "loading": "LOADING",
+    "search": "Search",
+    "characters": "CHARACTERS",
+    "houses": "HOUSES",
+    "chronology": "CHRONOLOGY"
+  },
+  "house-detail": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "loading": "LOADING",
+    "back": "GO BACK",
+    "words": "WORDS",
+    "seat": "SEAT",
+    "region": "REGION",
+    "allegiance": "ALLEGIANCE",
+    "religion": "RELIGION",
+    "created": "FUNDACION"
+  },
+  "char-detail": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "loading": "LOADING",
+    "back": "GO BACK",
+    "house": "HOUSE",
+    "allegiance": "ALLEGIANCE",
+    "appearances": "APPEARANCES",
+    "father": "FATHER",
+    "siblings": "SIBLINGS",
+    "titles": "TITLES"
+  },
+  "chronology": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "loading": "LOADING",
+    "characters": "CHARACTERS",
+    "houses": "HOUSES",
+    "chronology": "CHRONOLOGY",
+    "button": "UPWARD/FALLING"
+  }
+}
